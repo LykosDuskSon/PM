@@ -7,18 +7,25 @@ n, maior, menor, i: inteiro
 
 Inicio
 
+
+maior <- 0
+menor <- 0
+
 para i de 1 ate 10 faca
      escreva("Insira valores a frente: ")
      leia (n)
 
      se (n > maior) entao
-        maior <- maior * 0 + n
+        maior <- (maior * 0) + n
      senao
-          menor <- menor * 0 + n
+     se (n < menor) entao
+        menor <- (menor * 0) + n
+     fimse
      fimse
 
 fimpara
 
-escreval ("O maior número entre os digitados foi:", maior, " e o menor foi:" ,menor)
+escreval ("O maior nÃºmero entre os digitados foi:", maior, " e o menor foi:" ,menor)
+
 
 Fimalgoritmo
