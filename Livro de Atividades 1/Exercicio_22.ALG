@@ -1,19 +1,20 @@
-Algoritmo "DOR_DEPRESS�O_E_SOFRIMENTO_22"
+Algoritmo "DOR_DEPRESSÃO_E_SOFRIMENTO_22"
 
 Var
 
-n: inteiro
-a: inteiro
+i ,n, s: inteiro
 
 Inicio
 
-escreva ("At� que n�mero a lista deve ir? ")
+escreva ("Até que número a lista deve ir? ")
 leia (n)
 
-a <- 0
-enquanto (a < n) faca
-         a <- a + 1
-         escreval(a)
-fimenquanto
+para i de 1 até n faça
+
+     s <- s + i
+     
+fimpara
+
+escreva ("A soma de todos os números até", n, " é:", s)
 
 Fimalgoritmo
