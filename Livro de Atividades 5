@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title> CalculadorDeMediaEscolar </title>
+</head>
+
+<body>
+
+
+    <label for="text">Nota 1</label>
+    <input type="number" id="N1"><br>
+    <label for="text">Nota 2</label>
+    <input type="number" id="N2"><br>
+    <button id="botao" onclick="media()">Calcular Média</button><br><br>
+
+    <label>Media: </label>
+    <label id="vTMedia">*</label><br>
+
+    <label>Situação: </label>
+    <label id="vSituasans">*</label>
+
+
+    <Script>
+
+        alert("Seja bem vindo ao programa de medição de media de nota de alunos.");
+
+        function media() {
+
+
+            let vN1 = Number(document.getElementById("N1").value);
+            let vN2 = Number(document.getElementById("N2").value);
+            let vMedia = (vN1 + vN2) / 2;
+
+            vTMedia.innerHTML = vMedia.toFixed(1);
+
+            if (document.getElementById('N1').value.length == 0 || document.getElementById('N2').value.length == 0) {
+                alert("Preencha todos os espaços em branco por favor.");
+            }
+
+            else {
+                if (vN1 < 0 || vN1 > 10 || vN2 < 0 || vN2 > 10) {
+                    alert("Insira apenas as notas de alunos de 1 a 10 por favor.");
+                    return;
+                }
+                else {
+                    if (vMedia >= 7) {
+                        vSituasans.innerHTML = "Aprovado";
+                    }
+                    else {
+                        if (vMedia >= 5) {
+                            vSituasans.innerHTML = "Recuperação";
+                        }
+                        else {
+                            vSituasans.in = "Reprovado";
+                        }
+                    }
+                }
+            }
+        }
+    </Script>
+
+</body>
+
+</html>
