@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>CalculadorDeMediaEscolar</title>
+</head>
+
+<body>
+
+
+    <label for="N1">Nota 1</label>
+    <input type="number" id="N1"><br>
+    <label for="N2">Nota 2</label>
+    <input type="number" id="N2"><br>
+    <label for="N3">Nota 3</label>
+    <input type="number" id="N3"><br>
+
+    <button id="botao" onclick="media()">Calcular Média</button><br><br>
+
+    <label>Media: </label>
+    <label id="vTMedia">*</label><br>
+
+    <label>Situação: </label>
+    <label id="vSituasans">*</label>
+
+
+    <script>
+        alert("Seja bem vindo ao programa de medição de media de nota de alunos.");
+
+
+            // Atribuição de variaveis
+        function media() {
+            let input1 = document.getElementById("N1");
+            let input2 = document.getElementById("N2");
+            let input3 = document.getElementById("N3");
+
+            let vN1 = Number(input1.value);
+            let vN2 = Number(input2.value);
+            let vN3 = Number(input3.value);
+
+
+            // Validação de campos vazios
+            if (input1.value.length == 0 || input2.value.length == 0 || input3.value.length == 0) {
+                alert("Preencha todos os espaços em branco por favor.");
+                return; // Para a execução aqui
+            }
+
+
+            // Validação de valor de notas
+            if (vN1 < 0 || vN1 > 10 || vN2 < 0 || vN2 > 10 || vN3 < 0 || vN3 > 10) {
+                alert("Insira apenas as notas de alunos de 0 a 10 por favor.");
+                return;
+            }
+            
+
+            // Conta 
+            let vMedia = (vN1 + vN2 + vN3) / 3;
+            document.getElementById("vTMedia").innerHTML = vMedia.toFixed(1);
+
+
+            // Validação de situação
+            let situacao = document.getElementById("vSituasans");
+
+            if (vMedia >= 7) {
+                situacao.innerHTML = "Aprovado";
+                situacao.style.color = "green";
+            } else if (vMedia >= 5) {
+                situacao.innerHTML = "Recuperação";
+                situacao.style.color = "orange";
+            } else {
+                situacao.innerHTML = "Reprovado";
+                situacao.style.color = "red";
+            }
+
+            
+            // Limpeza das Variaveis
+            input1.value = "";
+            input2.value = "";
+            input3.value = "";
+            
+        }
+
+    </script>
+</body>
+</html>
