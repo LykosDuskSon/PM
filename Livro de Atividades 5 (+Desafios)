@@ -41,7 +41,7 @@
             // Validação de campos vazios
             if (input1.value.length == 0 || input2.value.length == 0 || input3.value.length == 0) {
                 alert("Preencha todos os espaços em branco por favor.");
-                return; // Para a execução aqui
+                return;
             }
 
 
