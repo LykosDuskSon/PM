@@ -1,0 +1,67 @@
+import { StyleSheet, Text, Image, TouchableOpacity, Alert, View, TextInput, ScrollView } from 'react-native';
+
+const exibirMensagem = () => {
+  Alert.alert("APP Scholar", "Botão pressionado com sucesso!");
+};
+
+export default function App() {
+
+  return (
+    <View style={styles.container}>
+      <Image source={require('./assets/SLA3.png')} style={styles.logo} />
+      <Text style={styles.titulo}>APP Scholar</Text>
+      <Text style={styles.subtitulo}>Sistema Academico Mobile</Text>
+      <TouchableOpacity style={styles.botao} onPress={exibirMensagem}>
+        <Text style={styles.textoBotao}>Alunos</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.botao} onPress={exibirMensagem}>
+        <Text style={styles.textoBotao}>Professores</Text>
+      </TouchableOpacity>
+            <TouchableOpacity style={styles.botao} onPress={exibirMensagem}>
+        <Text style={styles.textoBotao}>Coordenadores</Text>
+      </TouchableOpacity>
+            <TouchableOpacity style={styles.botao} onPress={exibirMensagem}>
+        <Text style={styles.textoBotao}>Sobre</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#EBEBEB',
+  },
+  logo: {
+    width: 180,
+    height: 200,
+    marginBottom: 20,
+  },
+  titulo: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#696969',
+  },
+  subtitulo: {
+    fontSize: 18,
+    marginBottom: 40,
+    color: '#aBaBaB',
+  },
+  botao: {
+    width: '80%',
+    backgroundColor: '#343434',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 15,
+    alignItems: 'center',
+    borderWidth: 3,
+    borderColor: '#696969'
+  },
+  textoBotao: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#DDDDDD',
+  },
+});
